@@ -1,5 +1,5 @@
 //
-//  SplashController.swift
+//  GameplayController.swift
 //  BoutTime
 //
 //  Created by nikko444 on 2018-01-14.
@@ -8,15 +8,19 @@
 
 import UIKit
 
-class SplashController: UIViewController {
+class GameplayController: UIViewController {
 
+    @IBOutlet var factRowViews: [UIView]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for factRowView in factRowViews {
+            factRowView.layer.cornerRadius = 5;
+            factRowView.layer.masksToBounds = true;
+        }
 
         // Do any additional setup after loading the view.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.performSegue(withIdentifier: "splashToGameplay", sender: self)
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +28,7 @@ class SplashController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
     // MARK: - Navigation
 

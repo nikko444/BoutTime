@@ -13,6 +13,8 @@
 		8A68C7BC20092E9000EFA962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7BA20092E8F00EFA962 /* LaunchScreen.storyboard */; };
 		8A68C7C6200C3AC900EFA962 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C5200C3AC900EFA962 /* SplashController.swift */; };
 		8A68C7CA200C3C3F00EFA962 /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C9200C3C3F00EFA962 /* GameplayController.swift */; };
+		8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */; };
+		8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C35201196D800616EED /* ErrorEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8A68C7BD20092E9000EFA962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A68C7C5200C3AC900EFA962 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		8A68C7C9200C3C3F00EFA962 /* GameplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
+		8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNamesEnum.swift; sourceTree = "<group>"; };
+		8ACC2C35201196D800616EED /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				8A68C7B820092E8F00EFA962 /* Assets.xcassets */,
 				8A68C7BA20092E8F00EFA962 /* LaunchScreen.storyboard */,
 				8A68C7BD20092E9000EFA962 /* Info.plist */,
+				8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */,
+				8ACC2C35201196D800616EED /* ErrorEnum.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */,
 				8A68C7B220092E8F00EFA962 /* AppDelegate.swift in Sources */,
+				8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */,
 				8A68C7C6200C3AC900EFA962 /* SplashController.swift in Sources */,
 				8A68C7CA200C3C3F00EFA962 /* GameplayController.swift in Sources */,
 			);

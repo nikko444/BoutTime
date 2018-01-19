@@ -66,7 +66,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVc-Vb-KZV">
                                                 <rect key="frame" x="10" y="0.0" width="270" height="107"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying third row question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycz-tf-hBr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying first row fact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycz-tf-hBr">
                                                         <rect key="frame" x="0.0" y="0.0" width="222" height="107"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,9 +75,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kL7-hC-DHF">
                                                         <rect key="frame" x="222" y="0.0" width="48" height="107"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-uW-WNh">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-uW-WNh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="107"/>
                                                                 <state key="normal" title="Button" image="down_full"/>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="Xff-OV-PW3"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -101,7 +104,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-LT-JYT">
                                                 <rect key="frame" x="10" y="0.0" width="270" height="107"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying third row question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-y8-eDj">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying second row fact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-y8-eDj">
                                                         <rect key="frame" x="0.0" y="0.0" width="222" height="107"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,12 +113,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-ZF-Gpb">
                                                         <rect key="frame" x="222" y="0.0" width="48" height="107"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMU-jn-3Jq">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMU-jn-3Jq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="53.5"/>
                                                                 <state key="normal" title="Button" image="up_half"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-Oz-y03">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-Oz-y03">
                                                                 <rect key="frame" x="0.0" y="53.5" width="48" height="53.5"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                                 <state key="normal" title="Button" image="down_half"/>
                                                             </button>
                                                         </subviews>
@@ -140,7 +144,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwQ-Tf-KKc">
                                                 <rect key="frame" x="10" y="0.0" width="270" height="107"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying third row question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-Oh-an7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying third row fact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-Oh-an7">
                                                         <rect key="frame" x="0.0" y="0.0" width="222" height="107"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -149,11 +153,11 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uyj-OT-3xG">
                                                         <rect key="frame" x="222" y="0.0" width="48" height="107"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZT-f6-e6B">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZT-f6-e6B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="53.5"/>
                                                                 <state key="normal" title="Button" image="up_half"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-b8-Qys">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-b8-Qys">
                                                                 <rect key="frame" x="0.0" y="53.5" width="48" height="53.5"/>
                                                                 <state key="normal" title="Button" image="down_half"/>
                                                             </button>
@@ -179,7 +183,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-fk-CUp">
                                                 <rect key="frame" x="10" y="0.0" width="270" height="107"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying third row question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvg-21-5XL">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a field for displaying fourth row fact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvg-21-5XL">
                                                         <rect key="frame" x="0.0" y="0.0" width="222" height="107"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -188,7 +192,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xsv-5I-sTa">
                                                         <rect key="frame" x="222" y="0.0" width="48" height="107"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-5T-bYo">
+                                                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-5T-bYo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="107"/>
                                                                 <state key="normal" title="Button" image="up_full"/>
                                                             </button>
@@ -232,6 +236,12 @@
                         <viewLayoutGuide key="safeArea" id="KBB-sz-Jnq"/>
                     </view>
                     <connections>
+                        <outlet property="firstRowFullDownButton" destination="fUU-uW-WNh" id="D7j-bR-BCz"/>
+                        <outlet property="fourthRowFullUpButton" destination="a4F-5T-bYo" id="NJf-lq-3SF"/>
+                        <outlet property="secondRowHalfDownButton" destination="9aw-Oz-y03" id="IdN-Nc-GVi"/>
+                        <outlet property="secondRowHalfUpButton" destination="sMU-jn-3Jq" id="sAY-Jd-Pkr"/>
+                        <outlet property="thirdRowHalfDownButton" destination="OTK-b8-Qys" id="y0O-vj-fy6"/>
+                        <outlet property="thirdRowHalfUpButton" destination="yZT-f6-e6B" id="htR-h3-Znv"/>
                         <outletCollection property="factRowViews" destination="NRT-2M-ezR" collectionClass="NSMutableArray" id="Mck-Ef-E9h"/>
                         <outletCollection property="factRowViews" destination="4xa-PB-SUO" collectionClass="NSMutableArray" id="ppx-IV-SB7"/>
                         <outletCollection property="factRowViews" destination="Rdg-sb-Hmv" collectionClass="NSMutableArray" id="r3a-Rq-JUW"/>

@@ -17,6 +17,21 @@ class GameplayController: UIViewController {
     @IBOutlet weak var thirdRowHalfUpButton: UIButton!
     @IBOutlet weak var thirdRowHalfDownButton: UIButton!
     @IBOutlet weak var fourthRowFullUpButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var shakeLabel: UILabel!
+    
+    var timer: CountdownTimer?
+    
+    override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) { //MARK: Overriden to implement shake gesture listener
+        if motion == .motionShake {
+            //TODO: Add an actual method call to check the facts sequence
+            shakeLabel.text = "Shaken, not stirred" //FIXME: here just for the testing reason - has to be removed down the road
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +40,9 @@ class GameplayController: UIViewController {
             factRowView.layer.cornerRadius = 5;
             factRowView.layer.masksToBounds = true;
         }
+        
+        timer = CountdownTimer(timerLabel: timerLabel)
+        timer?.startTimer()
         
         firstRowFullDownButton.setTitle(ButtonNames.firstRowFullDown.rawValue, for: .normal)
         secondRowHalfUpButton.setTitle(ButtonNames.secondRowHalfUp.rawValue, for: .normal)
@@ -45,6 +63,8 @@ class GameplayController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) throws {
+        //TODO: I'm trying to implement a logic with just one Action for all the buttons on the View still being developed
+        /*
         guard let title = sender.title(for: .normal) else {
             throw Errors.buttonPressed("Inside the GameplayController Class")
         }
@@ -57,6 +77,7 @@ class GameplayController: UIViewController {
         case ButtonNames.fourthRowFullUp.rawValue: {}
         default: throw Errors.buttonPressed("Inside the GameplayController Class")
         }
+         */
     }
     
     /*

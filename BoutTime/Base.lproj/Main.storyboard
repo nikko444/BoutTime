@@ -214,8 +214,8 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:35" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfz-h1-mNw">
-                                <rect key="frame" x="104.5" y="475.5" width="111.5" height="64.5"/>
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfz-h1-mNw">
+                                <rect key="frame" x="88" y="476" width="212" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <color key="textColor" red="0.98815220594406128" green="0.98829025030136108" blue="0.98810869455337524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -225,12 +225,13 @@
                         <constraints>
                             <constraint firstItem="KBB-sz-Jnq" firstAttribute="trailing" secondItem="DCR-Tw-WFC" secondAttribute="trailing" constant="20" id="OSV-uT-GuO"/>
                             <constraint firstItem="DCR-Tw-WFC" firstAttribute="top" secondItem="KBB-sz-Jnq" secondAttribute="top" constant="0.5" id="WS0-r4-C5h"/>
+                            <constraint firstItem="KBB-sz-Jnq" firstAttribute="trailing" secondItem="kfz-h1-mNw" secondAttribute="trailing" constant="20" id="bSD-aK-j8v"/>
                             <constraint firstItem="kfz-h1-mNw" firstAttribute="top" secondItem="DCR-Tw-WFC" secondAttribute="bottom" id="boE-cV-BIz"/>
                             <constraint firstItem="VMu-xK-5uX" firstAttribute="top" secondItem="kfz-h1-mNw" secondAttribute="bottom" id="fQv-9v-Vws"/>
                             <constraint firstItem="VMu-xK-5uX" firstAttribute="centerX" secondItem="M4q-eZ-Mmh" secondAttribute="centerX" id="gGL-Ck-BO2"/>
                             <constraint firstItem="DCR-Tw-WFC" firstAttribute="leading" secondItem="KBB-sz-Jnq" secondAttribute="leading" constant="20" id="oFJ-bt-UtX"/>
+                            <constraint firstItem="kfz-h1-mNw" firstAttribute="leading" secondItem="KBB-sz-Jnq" secondAttribute="leading" constant="88" id="qtI-4E-bzV"/>
                             <constraint firstItem="KBB-sz-Jnq" firstAttribute="bottom" secondItem="VMu-xK-5uX" secondAttribute="bottom" constant="10" id="vCN-VL-MEn"/>
-                            <constraint firstItem="kfz-h1-mNw" firstAttribute="centerX" secondItem="M4q-eZ-Mmh" secondAttribute="centerX" id="vaE-Pg-4Gw"/>
                             <constraint firstItem="DCR-Tw-WFC" firstAttribute="centerX" secondItem="M4q-eZ-Mmh" secondAttribute="centerX" id="xib-95-cm4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KBB-sz-Jnq"/>
@@ -240,8 +241,10 @@
                         <outlet property="fourthRowFullUpButton" destination="a4F-5T-bYo" id="NJf-lq-3SF"/>
                         <outlet property="secondRowHalfDownButton" destination="9aw-Oz-y03" id="IdN-Nc-GVi"/>
                         <outlet property="secondRowHalfUpButton" destination="sMU-jn-3Jq" id="sAY-Jd-Pkr"/>
+                        <outlet property="shakeLabel" destination="VMu-xK-5uX" id="dQa-w1-jcN"/>
                         <outlet property="thirdRowHalfDownButton" destination="OTK-b8-Qys" id="y0O-vj-fy6"/>
                         <outlet property="thirdRowHalfUpButton" destination="yZT-f6-e6B" id="htR-h3-Znv"/>
+                        <outlet property="timerLabel" destination="kfz-h1-mNw" id="XxZ-vB-GmJ"/>
                         <outletCollection property="factRowViews" destination="NRT-2M-ezR" collectionClass="NSMutableArray" id="Mck-Ef-E9h"/>
                         <outletCollection property="factRowViews" destination="4xa-PB-SUO" collectionClass="NSMutableArray" id="ppx-IV-SB7"/>
                         <outletCollection property="factRowViews" destination="Rdg-sb-Hmv" collectionClass="NSMutableArray" id="r3a-Rq-JUW"/>
@@ -250,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2z-OZ-Dcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.875" y="131.25"/>
+            <point key="canvasLocation" x="901.875" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>

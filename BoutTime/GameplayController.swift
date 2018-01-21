@@ -19,8 +19,11 @@ class GameplayController: UIViewController {
     @IBOutlet weak var fourthRowFullUpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
+    @IBOutlet weak var firstRowFactLabel: UILabel!
     
     var timer: CountdownTimer?
+    
+    let factProvider = FactProvider() //FIXME: A temprorary instance just for a testing reason.
     
     override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
         return true
@@ -35,6 +38,8 @@ class GameplayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
         
         for factRowView in factRowViews {
             factRowView.layer.cornerRadius = 5;

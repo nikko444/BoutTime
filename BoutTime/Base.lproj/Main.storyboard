@@ -237,6 +237,7 @@
                         <viewLayoutGuide key="safeArea" id="KBB-sz-Jnq"/>
                     </view>
                     <connections>
+                        <outlet property="firstRowFactLabel" destination="Ycz-tf-hBr" id="FQR-jj-8R5"/>
                         <outlet property="firstRowFullDownButton" destination="fUU-uW-WNh" id="D7j-bR-BCz"/>
                         <outlet property="fourthRowFullUpButton" destination="a4F-5T-bYo" id="NJf-lq-3SF"/>
                         <outlet property="secondRowHalfDownButton" destination="9aw-Oz-y03" id="IdN-Nc-GVi"/>

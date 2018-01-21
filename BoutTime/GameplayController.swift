@@ -38,6 +38,7 @@ class GameplayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.becomeFirstResponder()
         
         firstRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
         

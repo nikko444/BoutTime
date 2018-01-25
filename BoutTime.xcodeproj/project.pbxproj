@@ -11,8 +11,12 @@
 		8A68C7B720092E8F00EFA962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7B520092E8F00EFA962 /* Main.storyboard */; };
 		8A68C7B920092E8F00EFA962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7B820092E8F00EFA962 /* Assets.xcassets */; };
 		8A68C7BC20092E9000EFA962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7BA20092E8F00EFA962 /* LaunchScreen.storyboard */; };
-		8A68C7C6200C3AC900EFA962 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C5200C3AC900EFA962 /* SplashController.swift */; };
-		8A68C7CA200C3C3F00EFA962 /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C9200C3C3F00EFA962 /* GameplayController.swift */; };
+		8A68C7C6200C3AC900EFA962 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C5200C3AC900EFA962 /* SplashViewController.swift */; };
+		8A68C7CA200C3C3F00EFA962 /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */; };
+		8A90038320196AE700E6537F /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038220196AE700E6537F /* Gameplay.swift */; };
+		8A900385201989EF00E6537F /* GameplayArrowButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */; };
+		8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */; };
+		8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */; };
 		8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */; };
 		8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C35201196D800616EED /* ErrorEnum.swift */; };
 		8ACC2C382013D41A00616EED /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C372013D41A00616EED /* CountdownTimer.swift */; };
@@ -27,8 +31,12 @@
 		8A68C7B820092E8F00EFA962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A68C7BB20092E9000EFA962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A68C7BD20092E9000EFA962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A68C7C5200C3AC900EFA962 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
-		8A68C7C9200C3C3F00EFA962 /* GameplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
+		8A68C7C5200C3AC900EFA962 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
+		8A90038220196AE700E6537F /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
+		8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayArrowButtonsHandler.swift; sourceTree = "<group>"; };
+		8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayFactButtonsHandler.swift; sourceTree = "<group>"; };
+		8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayLabelsHandler.swift; sourceTree = "<group>"; };
 		8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNamesEnum.swift; sourceTree = "<group>"; };
 		8ACC2C35201196D800616EED /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		8ACC2C372013D41A00616EED /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
@@ -67,8 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				8A68C7B120092E8F00EFA962 /* AppDelegate.swift */,
-				8A68C7C5200C3AC900EFA962 /* SplashController.swift */,
-				8A68C7C9200C3C3F00EFA962 /* GameplayController.swift */,
+				8A68C7C5200C3AC900EFA962 /* SplashViewController.swift */,
+				8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */,
+				8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */,
+				8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */,
+				8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */,
+				8A90038220196AE700E6537F /* Gameplay.swift */,
 				8ACC2C392014084200616EED /* FactProvider.swift */,
 				8ACC2C3B2014135200616EED /* FactModel.swift */,
 				8A68C7B520092E8F00EFA962 /* Main.storyboard */,
@@ -156,12 +168,16 @@
 			files = (
 				8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */,
 				8ACC2C3C2014135200616EED /* FactModel.swift in Sources */,
+				8A900385201989EF00E6537F /* GameplayArrowButtonsHandler.swift in Sources */,
 				8ACC2C382013D41A00616EED /* CountdownTimer.swift in Sources */,
 				8A68C7B220092E8F00EFA962 /* AppDelegate.swift in Sources */,
 				8ACC2C3A2014084200616EED /* FactProvider.swift in Sources */,
+				8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */,
+				8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */,
 				8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */,
-				8A68C7C6200C3AC900EFA962 /* SplashController.swift in Sources */,
-				8A68C7CA200C3C3F00EFA962 /* GameplayController.swift in Sources */,
+				8A68C7C6200C3AC900EFA962 /* SplashViewController.swift in Sources */,
+				8A90038320196AE700E6537F /* Gameplay.swift in Sources */,
+				8A68C7CA200C3C3F00EFA962 /* GameplayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

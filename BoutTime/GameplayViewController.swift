@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameplayController: UIViewController {
+class GameplayViewController: UIViewController {
 
     @IBOutlet var factRowViews: [UIView]!
     @IBOutlet weak var firstRowFullDownButton: UIButton!
@@ -19,9 +19,14 @@ class GameplayController: UIViewController {
     @IBOutlet weak var fourthRowFullUpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
-    @IBOutlet weak var firstRowFactLabel: UILabel!
+    @IBOutlet weak var firstRowFactButton: UIButton!
+    @IBOutlet weak var secondRowFactButton: UIButton!
+    @IBOutlet weak var thirdRowFactButton: UIButton!    
+    @IBOutlet weak var fourthRowFactButton: UIButton!
     
-    var timer: CountdownTimer?
+    
+    
+    var timer: CountdownTimer? //FIXME: A temp. instance
     
     let factProvider = FactProvider() //FIXME: A temprorary instance just for a testing reason.
     
@@ -40,7 +45,15 @@ class GameplayController: UIViewController {
         super.viewDidLoad()
         //self.becomeFirstResponder()
         
+        fourthRowFactButton.setTitle(factProvider.provide()?.caption, for: .normal) //FIXME: A temprorary operation just for a testing reason.
+        fourthRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        fourthRowFactButton.titleLabel?.textAlignment = .left
+        
+        
+        
         firstRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
+        secondRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
+        thirdRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
         
         for factRowView in factRowViews {
             factRowView.layer.cornerRadius = 5;
@@ -72,7 +85,7 @@ class GameplayController: UIViewController {
         //TODO: I'm trying to implement a logic with just one Action for all the buttons on the View still being developed
         /*
         guard let title = sender.title(for: .normal) else {
-            throw Errors.buttonPressed("Inside the GameplayController Class")
+            throw Errors.buttonPressed("Inside the GameplayViewController Class")
         }
         switch title {
         case ButtonNames.firstRowFullDown.rawValue: {}

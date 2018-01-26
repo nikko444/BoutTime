@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LabelsHandler {
+class GameplayLabelsHandler {
     
     let timerLabel: UILabel
     let shakeLabel: UILabel

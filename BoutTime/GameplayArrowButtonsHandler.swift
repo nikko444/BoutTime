@@ -9,6 +9,7 @@
 import UIKit
 
 class GameplayArrowButtonsHandler {
+    
     let firstRowFullDownButton: UIButton
     let secondRowHalfUpButton: UIButton
     let secondRowHalfDownButton: UIButton
@@ -22,11 +23,11 @@ class GameplayArrowButtonsHandler {
          thirdRowHalfUpButton: UIButton,
          thirdRowHalfDownButton: UIButton,
          fourthRowFullUpButton: UIButton) {
-        self.firstRowFullDownButton = firstRowFullDownButton,
-        self.secondRowHalfUpButton = secondRowHalfUpButton,
-        self.secondRowHalfDownButton = secondRowHalfDownButton,
-        self.thirdRowHalfUpButton = thirdRowHalfUpButton,
-        self.thirdRowHalfDownButton = thirdRowHalfDownButton,
+        self.firstRowFullDownButton = firstRowFullDownButton
+        self.secondRowHalfUpButton = secondRowHalfUpButton
+        self.secondRowHalfDownButton = secondRowHalfDownButton
+        self.thirdRowHalfUpButton = thirdRowHalfUpButton
+        self.thirdRowHalfDownButton = thirdRowHalfDownButton
         self.fourthRowFullUpButton = fourthRowFullUpButton
     }
 

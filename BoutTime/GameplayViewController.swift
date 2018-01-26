@@ -25,10 +25,11 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var fourthRowFactButton: UIButton!
     
     
-    
     var timer: CountdownTimer? //FIXME: A temp. instance
     
     let factProvider = FactProvider() //FIXME: A temprorary instance just for a testing reason.
+    
+    var gameplay: Gameplay?
     
     override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
         return true
@@ -43,6 +44,20 @@ class GameplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameplay = Gameplay(firstRowFullDownButton: firstRowFullDownButton,
+                            secondRowHalfUpButton: secondRowHalfUpButton,
+                            secondRowHalfDownButton: secondRowHalfDownButton,
+                            thirdRowHalfUpButton: thirdRowHalfUpButton,
+                            thirdRowHalfDownButton: thirdRowHalfDownButton,
+                            fourthRowFullUpButton: fourthRowFullUpButton,
+                            timerLabel: timerLabel, shakeLabel: shakeLabel,
+                            firstRowFactButton: firstRowFactButton,
+                            secondRowFactButton: secondRowFactButton,
+                            thirdRowFactButton: thirdRowFactButton,
+                            fourthRowFactButton: fourthRowFactButton)
+        
+        
         //self.becomeFirstResponder()
         
         fourthRowFactButton.setTitle(factProvider.provide()?.caption, for: .normal) //FIXME: A temprorary operation just for a testing reason.
@@ -51,10 +66,7 @@ class GameplayViewController: UIViewController {
         
         
         
-        firstRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
-        secondRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
-        thirdRowFactLabel.text = factProvider.provide()?.caption //FIXME: A temprorary operation just for a testing reason.
-        
+
         for factRowView in factRowViews {
             factRowView.layer.cornerRadius = 5;
             factRowView.layer.masksToBounds = true;
@@ -83,20 +95,7 @@ class GameplayViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) throws {
         //TODO: I'm trying to implement a logic with just one Action for all the buttons on the View still being developed
-        /*
-        guard let title = sender.title(for: .normal) else {
-            throw Errors.buttonPressed("Inside the GameplayViewController Class")
-        }
-        switch title {
-        case ButtonNames.firstRowFullDown.rawValue: {}
-        case ButtonNames.secondRowHalfUp.rawValue: {}
-        case ButtonNames.secondRowHalfDown.rawValue: {}
-        case ButtonNames.thirdRowHalfUp.rawValue: {}
-        case ButtonNames.thirdRowHalfDown.rawValue: {}
-        case ButtonNames.fourthRowFullUp.rawValue: {}
-        default: throw Errors.buttonPressed("Inside the GameplayController Class")
-        }
-         */
+
     }
     
     /*

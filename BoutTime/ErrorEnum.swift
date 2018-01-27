@@ -8,4 +8,6 @@
 
 enum Errors : Error {
     case buttonPressed(String)
+    case factSlotsArray(String)
+    case couldNotRetriveFact
 }

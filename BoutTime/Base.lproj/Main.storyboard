@@ -58,7 +58,7 @@
                                 <color key="highlightedColor" red="0.19343361258506775" green="0.55552089214324951" blue="0.70136839151382446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DCR-Tw-WFC">
-                                <rect key="frame" x="20" y="20.5" width="280" height="454.5"/>
+                                <rect key="frame" x="20" y="20.5" width="280" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-2M-ezR">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="107"/>
@@ -76,14 +76,29 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kL7-hC-DHF">
                                                         <rect key="frame" x="222" y="0.0" width="48" height="107"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-uW-WNh">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i2Q-WT-7ON">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="107"/>
-                                                                <state key="normal" title="Button" image="down_full"/>
-                                                            </button>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-uW-WNh">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="107"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="fUU-uW-WNh" secondAttribute="height" multiplier="48:107" id="46n-j7-oDf"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button" image="down_full"/>
+                                                                        <connections>
+                                                                            <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="bDR-cR-Oh2"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="i2Q-WT-7ON" secondAttribute="height" multiplier="48:107" id="iM2-l6-70I"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="kL7-hC-DHF" firstAttribute="leading" secondItem="clh-WC-Q0z" secondAttribute="trailing" id="9yU-zD-iev"/>
                                                     <constraint firstItem="clh-WC-Q0z" firstAttribute="centerX" secondItem="zVc-Vb-KZV" secondAttribute="centerX" constant="-24" id="MMT-lb-EqG"/>
                                                 </constraints>
                                             </stackView>
@@ -114,18 +129,31 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMU-jn-3Jq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="53.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="sMU-jn-3Jq" secondAttribute="height" multiplier="48:53" id="Aub-Qz-CUH"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button" image="up_half"/>
+                                                                <connections>
+                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="qgE-Np-e4t"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-Oz-y03">
                                                                 <rect key="frame" x="0.0" y="53.5" width="48" height="53.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="9aw-Oz-y03" secondAttribute="height" multiplier="48:53" id="LnO-xj-bs2"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                                 <state key="normal" title="Button" image="down_half"/>
+                                                                <connections>
+                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="1oM-55-ZKE"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="p2d-ru-dpY" firstAttribute="centerX" secondItem="xmS-LT-JYT" secondAttribute="centerX" constant="-24" id="NS8-TN-lwt"/>
+                                                    <constraint firstItem="dPg-ZF-Gpb" firstAttribute="leading" secondItem="p2d-ru-dpY" secondAttribute="trailing" id="zaH-12-dLm"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -138,34 +166,46 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-sb-Hmv">
-                                        <rect key="frame" x="0.0" y="232" width="280" height="106.5"/>
+                                        <rect key="frame" x="0.0" y="232" width="280" height="107"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwQ-Tf-KKc">
-                                                <rect key="frame" x="10" y="0.0" width="270" height="106.5"/>
+                                                <rect key="frame" x="10" y="0.0" width="270" height="107"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc2-CJ-86u">
-                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="107"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Third row fact">
                                                             <color key="titleColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uyj-OT-3xG">
-                                                        <rect key="frame" x="223" y="0.0" width="47" height="106.5"/>
+                                                        <rect key="frame" x="223" y="0.0" width="47" height="107"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZT-f6-e6B">
-                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="53.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="yZT-f6-e6B" secondAttribute="height" multiplier="47:53" id="4KR-rn-l7I"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button" image="up_half"/>
+                                                                <connections>
+                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="gTJ-aT-ObS"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-b8-Qys">
-                                                                <rect key="frame" x="0.0" y="53" width="47" height="53.5"/>
+                                                                <rect key="frame" x="0.0" y="53.5" width="47" height="53.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="OTK-b8-Qys" secondAttribute="height" multiplier="47:53" id="rk6-kG-5hr"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button" image="down_half"/>
+                                                                <connections>
+                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="dwc-BY-v65"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="jc2-CJ-86u" firstAttribute="centerX" secondItem="FwQ-Tf-KKc" secondAttribute="centerX" constant="-24" id="EdK-p2-0bF"/>
+                                                    <constraint firstItem="uyj-OT-3xG" firstAttribute="leading" secondItem="jc2-CJ-86u" secondAttribute="trailing" id="Vqz-ob-isk"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -178,7 +218,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-hs-CZ2">
-                                        <rect key="frame" x="0.0" y="347.5" width="280" height="107"/>
+                                        <rect key="frame" x="0.0" y="348" width="280" height="107"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-fk-CUp">
                                                 <rect key="frame" x="10" y="0.0" width="270" height="107"/>
@@ -195,13 +235,19 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-5T-bYo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="107"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="a4F-5T-bYo" secondAttribute="height" multiplier="47:107" id="8fl-ai-UMK"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button" image="up_full"/>
+                                                                <connections>
+                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="cBp-I2-Nx7"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="5F9-ZT-3uY" firstAttribute="centerX" secondItem="VuW-fk-CUp" secondAttribute="centerX" constant="-24" id="sOb-Mm-fMm"/>
+                                                    <constraint firstItem="Xsv-5I-sTa" firstAttribute="leading" secondItem="5F9-ZT-3uY" secondAttribute="trailing" id="gWo-VX-54H"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>

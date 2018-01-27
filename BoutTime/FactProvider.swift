@@ -13,7 +13,7 @@ class FactProvider {
     let facts: [FactModel?] = [
         
         FactModel(caption: "First human in outer space", //MARK: 1. First human in outer space
-                date: DateComponents(year: 1961, month: 4, day: 12)),
+            date: DateComponents(year: 1961, month: 4, day: 12)),
         
         FactModel(caption: "First sustained, controlled, powered heavier-than-air manned flight", //MARK: 2. First flight
                 date: DateComponents(year: 1903, month: 12, day: 17)),
@@ -155,9 +155,9 @@ class FactProvider {
         return indexOfSelectedFact
     }
     
-    func provide () -> FactModel? {
+    func provide () throws -> FactModel {
         guard let unwrappedFact = facts[randomFact()] else {
-            return nil
+            throw Errors.couldNotRetriveFact
         }
         return unwrappedFact
     }

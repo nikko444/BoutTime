@@ -10,16 +10,11 @@ import UIKit
 
 struct FactModel {
     let caption : String
-    let date : DateComponents?
+    let date : DateComponents
     
-    init? (caption: String?, date: DateComponents?) {
-        guard let assignableCaption = caption,
-            let assignableDate = date
-            else {
-                return nil
-        }
-        self.caption = assignableCaption
-        self.date = assignableDate
+    init? (caption: String, date: DateComponents) {
+        self.caption = caption
+        self.date = date
     }
     
 }

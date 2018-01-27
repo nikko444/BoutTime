@@ -24,11 +24,6 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var thirdRowFactButton: UIButton!    
     @IBOutlet weak var fourthRowFactButton: UIButton!
     
-    
-    var timer: CountdownTimer? //FIXME: A temp. instance
-    
-    let factProvider = FactProvider() //FIXME: A temprorary instance just for a testing reason.
-    
     var gameplay: Gameplay?
     
     override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
@@ -51,29 +46,18 @@ class GameplayViewController: UIViewController {
                             thirdRowHalfUpButton: thirdRowHalfUpButton,
                             thirdRowHalfDownButton: thirdRowHalfDownButton,
                             fourthRowFullUpButton: fourthRowFullUpButton,
-                            timerLabel: timerLabel, shakeLabel: shakeLabel,
+                            timerLabel: timerLabel,
+                            shakeLabel: shakeLabel,
                             firstRowFactButton: firstRowFactButton,
                             secondRowFactButton: secondRowFactButton,
                             thirdRowFactButton: thirdRowFactButton,
                             fourthRowFactButton: fourthRowFactButton)
+    
         
-        
-        //self.becomeFirstResponder()
-        
-        fourthRowFactButton.setTitle(factProvider.provide()?.caption, for: .normal) //FIXME: A temprorary operation just for a testing reason.
-        fourthRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
-        fourthRowFactButton.titleLabel?.textAlignment = .left
-        
-        
-        
-
-        for factRowView in factRowViews {
+        for factRowView in factRowViews {  //MARK: Applying round corners
             factRowView.layer.cornerRadius = 5;
             factRowView.layer.masksToBounds = true;
         }
-        
-        timer = CountdownTimer(timerLabel: timerLabel)
-        timer?.startTimer()
         
         firstRowFullDownButton.setTitle(ButtonNames.firstRowFullDown.rawValue, for: .normal)
         secondRowHalfUpButton.setTitle(ButtonNames.secondRowHalfUp.rawValue, for: .normal)
@@ -82,10 +66,17 @@ class GameplayViewController: UIViewController {
         thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
         fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
         
+        firstRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        firstRowFactButton.titleLabel?.textAlignment = .left
+        secondRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        secondRowFactButton.titleLabel?.textAlignment = .left
+        thirdRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        thirdRowFactButton.titleLabel?.textAlignment = .left
+        fourthRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        fourthRowFactButton.titleLabel?.textAlignment = .left
         
-        firstRowFullDownButton.setImage(UIImage(named : "down_full_selected"), for: .selected)
-
-        // Do any additional setup after loading the view.
+        gameplay?.setGameScreen()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,11 +84,9 @@ class GameplayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed(_ sender: UIButton) throws {
-        //TODO: I'm trying to implement a logic with just one Action for all the buttons on the View still being developed
-
+    @IBAction func arrowButtonPressed(_ sender: UIButton) {
     }
-    
+        
     /*
     // MARK: - Navigation
 

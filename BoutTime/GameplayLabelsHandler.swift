@@ -10,7 +10,7 @@ import UIKit
 
 class GameplayLabelsHandler {
     
-    let timerLabel: UILabel
+    var timerLabel: UILabel
     let shakeLabel: UILabel
     
     init(timerLabel: UILabel,
@@ -18,4 +18,9 @@ class GameplayLabelsHandler {
         self.timerLabel = timerLabel
         self.shakeLabel = shakeLabel
     }
+    
+    func getTimerLabel () -> UILabel {
+        return timerLabel
+    }
+    
 }

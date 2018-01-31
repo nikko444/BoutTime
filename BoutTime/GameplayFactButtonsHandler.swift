@@ -31,13 +31,21 @@ class GameplayFactButtonsHandler {
         } else {
         
         self.firstRowFactButton.setTitle(factSlots[0].caption, for: .normal)
-        
+        self.firstRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        self.firstRowFactButton.titleLabel?.textAlignment = .center
+            
+            
         self.secondRowFactButton.setTitle(factSlots[1].caption, for: .normal)
-        
+        self.secondRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        self.secondRowFactButton.titleLabel?.textAlignment = .center
+            
         self.thirdRowFactButton.setTitle(factSlots[2].caption, for: .normal)
-        
+        self.thirdRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        self.thirdRowFactButton.titleLabel?.textAlignment = .center
+            
         self.fourthRowFactButton.setTitle(factSlots[3].caption, for: .normal)
-        
+        self.fourthRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
+        self.fourthRowFactButton.titleLabel?.textAlignment = .center
         }
     }
     

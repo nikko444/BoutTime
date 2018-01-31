@@ -65,15 +65,7 @@ class GameplayViewController: UIViewController {
         thirdRowHalfUpButton.setTitle(ButtonNames.thirdRowHalfUp.rawValue, for: .normal)
         thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
         fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
-        
-        firstRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
-        firstRowFactButton.titleLabel?.textAlignment = .left
-        secondRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
-        secondRowFactButton.titleLabel?.textAlignment = .left
-        thirdRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
-        thirdRowFactButton.titleLabel?.textAlignment = .left
-        fourthRowFactButton.titleLabel?.lineBreakMode = .byWordWrapping
-        fourthRowFactButton.titleLabel?.textAlignment = .left
+    
         
         gameplay?.setGameScreen()
         

@@ -22,6 +22,7 @@ class Gameplay {
     let gameplayLabelsHandler : GameplayLabelsHandler
     
     var factSlots: [FactModel] = []
+    var factBuffer: FactModel?
     
     init(firstRowFullDownButton: UIButton,
          secondRowHalfUpButton: UIButton,
@@ -72,9 +73,7 @@ class Gameplay {
         }
     }
     
-    func setGameScreen () {
-        setFactsToSlots()
-        
+    func unwrappedSetFacts() {
         do {
             try gameplayFactButtonsHandler.setFacts(factSlots: factSlots)
         } catch Errors.factSlotsArray("factSlots Array is corrupt - length is not 4!") {
@@ -82,11 +81,61 @@ class Gameplay {
         } catch {
             gameplayFactButtonsHandler.showError()
         }
-        
+    }
+    
+    func setGameScreen () {
+        setFactsToSlots()
+        unwrappedSetFacts()
         countdownTimer?.startTimer()
         roundsPlayed += 1
     }
     
+    func setFactBuffer (for fact: FactModel?) {
+        guard let unwrappedFact = fact else {
+            fatalError("setFactBuffer method Error! factSlots array must be corrupt")
+        }
+        factBuffer = unwrappedFact
+    }
+    
+    func getFactBuffer () -> FactModel{
+        guard let unwrappedFactBuffer = factBuffer else {
+            fatalError("getFactBuffer method Error! factSlots array must be corrupt")
+        }
+        return unwrappedFactBuffer
+    }
+    
+    func moveFact(for state: MoveFactOptions) {
+        switch state {
+        case .firstAndSecond:
+            setFactBuffer(for: factSlots[0])
+            factSlots[0] = factSlots[1]
+            factSlots[1] = getFactBuffer()
+        case .secondAndThird:
+            setFactBuffer(for: factSlots[1])
+            factSlots[1] = factSlots[2]
+            factSlots[2] = getFactBuffer()
+        case .thirdAndFourth:
+            setFactBuffer(for: factSlots[2])
+            factSlots[2] = factSlots[3]
+            factSlots[3] = getFactBuffer()
+        }
+        unwrappedSetFacts()
+    }
+    
+    func arrowButtonPressed(_ sender: UIButton) {
+        guard let buttonTitle = sender.title(for: .normal) else {
+            fatalError("button with no title assigned been pressed, mosr likely someting went wrong in the GamplayViewController class")
+        }
+        switch buttonTitle {
+        case ButtonNames.firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
+        case ButtonNames.secondRowHalfUp.rawValue: moveFact(for: .firstAndSecond)
+        case ButtonNames.secondRowHalfDown.rawValue: moveFact(for: .secondAndThird)
+        case ButtonNames.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
+        case ButtonNames.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
+        case ButtonNames.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
+        default: fatalError("button with no title assigned been pressed, mosr likely someting went wrong in the GamplayViewController class")
+        }
+    }
     
     
 }

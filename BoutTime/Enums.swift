@@ -14,3 +14,9 @@ enum ButtonNames: String {
     case thirdRowHalfDown = "3D"
     case fourthRowFullUp = "4"
 }
+
+enum MoveFactOptions {
+    case firstAndSecond
+    case secondAndThird
+    case thirdAndFourth
+}

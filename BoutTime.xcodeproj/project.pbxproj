@@ -17,7 +17,7 @@
 		8A900385201989EF00E6537F /* GameplayArrowButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */; };
 		8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */; };
 		8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */; };
-		8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */; };
+		8ACC2C34201192A700616EED /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C33201192A700616EED /* Enums.swift */; };
 		8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C35201196D800616EED /* ErrorEnum.swift */; };
 		8ACC2C382013D41A00616EED /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C372013D41A00616EED /* CountdownTimer.swift */; };
 		8ACC2C3A2014084200616EED /* FactProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C392014084200616EED /* FactProvider.swift */; };
@@ -37,7 +37,7 @@
 		8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayArrowButtonsHandler.swift; sourceTree = "<group>"; };
 		8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayFactButtonsHandler.swift; sourceTree = "<group>"; };
 		8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayLabelsHandler.swift; sourceTree = "<group>"; };
-		8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNamesEnum.swift; sourceTree = "<group>"; };
+		8ACC2C33201192A700616EED /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8ACC2C35201196D800616EED /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		8ACC2C372013D41A00616EED /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		8ACC2C392014084200616EED /* FactProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactProvider.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				8A68C7B820092E8F00EFA962 /* Assets.xcassets */,
 				8A68C7BA20092E8F00EFA962 /* LaunchScreen.storyboard */,
 				8A68C7BD20092E9000EFA962 /* Info.plist */,
-				8ACC2C33201192A700616EED /* ButtonNamesEnum.swift */,
+				8ACC2C33201192A700616EED /* Enums.swift */,
 				8ACC2C35201196D800616EED /* ErrorEnum.swift */,
 				8ACC2C372013D41A00616EED /* CountdownTimer.swift */,
 			);
@@ -174,7 +174,7 @@
 				8ACC2C3A2014084200616EED /* FactProvider.swift in Sources */,
 				8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */,
 				8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */,
-				8ACC2C34201192A700616EED /* ButtonNamesEnum.swift in Sources */,
+				8ACC2C34201192A700616EED /* Enums.swift in Sources */,
 				8A68C7C6200C3AC900EFA962 /* SplashViewController.swift in Sources */,
 				8A90038320196AE700E6537F /* Gameplay.swift in Sources */,
 				8A68C7CA200C3C3F00EFA962 /* GameplayViewController.swift in Sources */,

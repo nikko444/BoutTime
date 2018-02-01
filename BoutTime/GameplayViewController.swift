@@ -77,6 +77,10 @@ class GameplayViewController: UIViewController {
     }
     
     @IBAction func arrowButtonPressed(_ sender: UIButton) {
+        guard let unwrappedGameplay = gameplay else {
+            fatalError("Critical Error! Gameplay class was not initialized in the body of a GameplayViewController.")
+        }
+        unwrappedGameplay.arrowButtonPressed(sender)
     }
         
     /*

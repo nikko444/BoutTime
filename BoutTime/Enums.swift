@@ -20,3 +20,8 @@ enum MoveFactOptions {
     case secondAndThird
     case thirdAndFourth
 }
+
+enum ShakeLabel: String {
+     case shakeToComplete = "Shake to complete"
+     case tapEventsToLearnMore = "Tap facts to learn more"
+}

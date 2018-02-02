@@ -52,7 +52,7 @@ class Gameplay {
         gameplayLabelsHandler = GameplayLabelsHandler(timerLabel: timerLabel,
                                                       shakeLabel: shakeLabel)
         
-        countdownTimer = CountdownTimer(timerLabel: gameplayLabelsHandler.getTimerLabel())
+        countdownTimer = CountdownTimer(timerLabel: timerLabel)
         
         roundsPlayed = 0
         
@@ -73,7 +73,7 @@ class Gameplay {
         }
     }
     
-    func unwrappedSetFacts() {
+    func setFactButtonsCaptions() {
         do {
             try gameplayFactButtonsHandler.setFacts(factSlots: factSlots)
         } catch Errors.factSlotsArray("factSlots Array is corrupt - length is not 4!") {
@@ -84,8 +84,11 @@ class Gameplay {
     }
     
     func setGameScreen () {
+        gameplayLabelsHandler.setShakeLabel(to: .shakeToComplete)
+        gameplayArrowButtonsHandler.enableArrowButtons()
+        gameplayFactButtonsHandler.disableFactButtons()
         setFactsToSlots()
-        unwrappedSetFacts()
+        setFactButtonsCaptions()
         countdownTimer?.startTimer()
         roundsPlayed += 1
     }
@@ -119,12 +122,22 @@ class Gameplay {
             factSlots[2] = factSlots[3]
             factSlots[3] = getFactBuffer()
         }
-        unwrappedSetFacts()
+        setFactButtonsCaptions()
+    }
+    
+    func checkOrder () -> Bool {
+        if (factSlots[0].getDate() <= factSlots[1].getDate()) &&
+           (factSlots[1].getDate() <= factSlots[2].getDate()) &&
+           (factSlots[2].getDate() <= factSlots[3].getDate()){
+            return true
+        } else {
+            return false
+        }
     }
     
     func arrowButtonPressed(_ sender: UIButton) {
         guard let buttonTitle = sender.title(for: .normal) else {
-            fatalError("button with no title assigned been pressed, mosr likely someting went wrong in the GamplayViewController class")
+            fatalError("button with no title assigned been pressed, most likely someting went wrong in the GamplayViewController class")
         }
         switch buttonTitle {
         case ButtonNames.firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
@@ -133,9 +146,21 @@ class Gameplay {
         case ButtonNames.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
         case ButtonNames.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
         case ButtonNames.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
-        default: fatalError("button with no title assigned been pressed, mosr likely someting went wrong in the GamplayViewController class")
+        default: fatalError("button with no title assigned been pressed, most likely someting went wrong in the GamplayViewController class")
         }
     }
     
+    func setCheckScreen () {
+        gameplayLabelsHandler.setShakeLabel(to: .tapEventsToLearnMore)
+        gameplayArrowButtonsHandler.disableArrowButtons()
+        gameplayFactButtonsHandler.enableFactButtons()
+        
+    }
+    
+    func shakeGesture () {
+        if checkOrder() {
+            
+        }
+    }
     
 }

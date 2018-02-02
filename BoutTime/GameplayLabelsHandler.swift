@@ -19,8 +19,19 @@ class GameplayLabelsHandler {
         self.shakeLabel = shakeLabel
     }
     
-    func getTimerLabel () -> UILabel {
-        return timerLabel
+    func setShakeLabel(to captions: ShakeLabel) {
+        switch captions {
+        case .shakeToComplete: shakeLabel.text = ShakeLabel.shakeToComplete.rawValue
+        case .tapEventsToLearnMore: shakeLabel.text = ShakeLabel.tapEventsToLearnMore.rawValue
+        }
+    }
+    
+    func setCorrectPic () {
+        timerLabel.backgroundColor = UIColor(patternImage: UIImage(named: "next_round_success")!)
+    }
+    
+    func setWrongPic () {
+        timerLabel.backgroundColor = UIColor(patternImage: UIImage(named: "next_round_fail")!)
     }
     
 }

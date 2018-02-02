@@ -67,4 +67,18 @@ class GameplayFactButtonsHandler {
         self.fourthRowFactButton.titleLabel?.textAlignment = .left
     }
     
+    func disableFactButtons () {
+        firstRowFactButton.isEnabled = false
+        secondRowFactButton.isEnabled = false
+        thirdRowFactButton.isEnabled = false
+        fourthRowFactButton.isEnabled = false
+    }
+    
+    func enableFactButtons () {
+        firstRowFactButton.isEnabled = true
+        secondRowFactButton.isEnabled = true
+        thirdRowFactButton.isEnabled = true
+        fourthRowFactButton.isEnabled = true
+    }
+    
 }

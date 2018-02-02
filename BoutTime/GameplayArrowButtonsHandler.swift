@@ -30,5 +30,25 @@ class GameplayArrowButtonsHandler {
         self.thirdRowHalfDownButton = thirdRowHalfDownButton
         self.fourthRowFullUpButton = fourthRowFullUpButton
     }
+    
+    func disableArrowButtons () {
+        firstRowFullDownButton.isEnabled = false
+        secondRowHalfUpButton.isEnabled = false
+        secondRowHalfUpButton.isEnabled = false
+        secondRowHalfDownButton.isEnabled = false
+        thirdRowHalfUpButton.isEnabled = false
+        thirdRowHalfDownButton.isEnabled = false
+        fourthRowFullUpButton.isEnabled = false
+    }
+    
+    func enableArrowButtons () {
+        firstRowFullDownButton.isEnabled = true
+        secondRowHalfUpButton.isEnabled = true
+        secondRowHalfUpButton.isEnabled = true
+        secondRowHalfDownButton.isEnabled = true
+        thirdRowHalfUpButton.isEnabled = true
+        thirdRowHalfDownButton.isEnabled = true
+        fourthRowFullUpButton.isEnabled = true
+    }
 
 }

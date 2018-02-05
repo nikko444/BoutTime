@@ -17,6 +17,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var thirdRowHalfUpButton: UIButton!
     @IBOutlet weak var thirdRowHalfDownButton: UIButton!
     @IBOutlet weak var fourthRowFullUpButton: UIButton!
+    @IBOutlet weak var controlButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     @IBOutlet weak var firstRowFactButton: UIButton!
@@ -24,6 +25,10 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var thirdRowFactButton: UIButton!    
     @IBOutlet weak var fourthRowFactButton: UIButton!
     
+    var gameplayArrowButtonsHandler: GameplayArrowButtonsHandler?
+    var gameplayControlButtonsHandler: GameplayControlButtonsHandler?
+    var gameplayLabelsHandler: GameplayLabelsHandler?
+    var countdownTimer: CountdownTimer?
     var gameplay: Gameplay?
     
     override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
@@ -32,27 +37,29 @@ class GameplayViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) { //MARK: Overriden to implement shake gesture listener
         if motion == .motionShake {
-            //TODO: Add an actual method call to check the facts sequence
-            shakeLabel.text = "Shaken, not stirred" //FIXME: here just for the testing reason - has to be removed down the road
+            gameplay?.shakeGesture()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameplayArrowButtonsHandler = GameplayArrowButtonsHandler(gameplayViewController: self)
+        gameplayControlButtonsHandler = GameplayControlButtonsHandler(gameplayViewController: self)
+        gameplayLabelsHandler = GameplayLabelsHandler(gameplayViewController: self)
+        countdownTimer = CountdownTimer(gameplayViewController: self)
         
-        gameplay = Gameplay(firstRowFullDownButton: firstRowFullDownButton,
-                            secondRowHalfUpButton: secondRowHalfUpButton,
-                            secondRowHalfDownButton: secondRowHalfDownButton,
-                            thirdRowHalfUpButton: thirdRowHalfUpButton,
-                            thirdRowHalfDownButton: thirdRowHalfDownButton,
-                            fourthRowFullUpButton: fourthRowFullUpButton,
-                            timerLabel: timerLabel,
-                            shakeLabel: shakeLabel,
-                            firstRowFactButton: firstRowFactButton,
-                            secondRowFactButton: secondRowFactButton,
-                            thirdRowFactButton: thirdRowFactButton,
-                            fourthRowFactButton: fourthRowFactButton)
-    
+        guard let unwrappedGameplayArrowButtonsHandler = gameplayArrowButtonsHandler,
+            let unwrappedGameplayControlButtonsHandler = gameplayControlButtonsHandler,
+            let unwrappedGameplayLabelsHandler = gameplayLabelsHandler,
+            let unwrappedCountdownTimer = countdownTimer else {
+                fatalError("One of the Controllers failed to initialize in the body of a GameplayViewController.")
+        }
+        
+        gameplay = Gameplay(gameplayViewController: self,
+                            gameplayArrowButtonsHandler: unwrappedGameplayArrowButtonsHandler,
+                            gameplayControlButtonsHandler: unwrappedGameplayControlButtonsHandler,
+                            gameplayLabelsHandler: unwrappedGameplayLabelsHandler,
+                            countdownTimer: unwrappedCountdownTimer)
         
         for factRowView in factRowViews {  //MARK: Applying round corners
             factRowView.layer.cornerRadius = 5;
@@ -65,6 +72,7 @@ class GameplayViewController: UIViewController {
         thirdRowHalfUpButton.setTitle(ButtonNames.thirdRowHalfUp.rawValue, for: .normal)
         thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
         fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
+        controlButton.setTitle(ButtonNames.controlButton.rawValue, for: .normal)
     
         
         gameplay?.setGameScreen()
@@ -81,6 +89,14 @@ class GameplayViewController: UIViewController {
             fatalError("Critical Error! Gameplay class was not initialized in the body of a GameplayViewController.")
         }
         unwrappedGameplay.arrowButtonPressed(sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //TODO: Come up with the logic for the segue change
+    }
+    
+    func showScore () {
+        self.performSegue(withIdentifier: "gameplayToScore", sender: self)
     }
         
     /*

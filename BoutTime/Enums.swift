@@ -13,6 +13,7 @@ enum ButtonNames: String {
     case thirdRowHalfUp = "3U"
     case thirdRowHalfDown = "3D"
     case fourthRowFullUp = "4"
+    case controlButton = "Control Button"
 }
 
 enum MoveFactOptions {

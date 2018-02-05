@@ -13,49 +13,33 @@ import GameKit
 class Gameplay {
     
     var factProvider = FactProvider()
-    var countdownTimer: CountdownTimer?
     
     var roundsPlayed : Int
+    var correctAnswers : Int
+    var numberOfRounds : Int = 6
     
+    let gameplayViewController : GameplayViewController
     let gameplayArrowButtonsHandler : GameplayArrowButtonsHandler
-    let gameplayFactButtonsHandler : GameplayFactButtonsHandler
+    let gameplayControlButtonsHandler : GameplayControlButtonsHandler
     let gameplayLabelsHandler : GameplayLabelsHandler
+    let countdownTimer: CountdownTimer
     
     var factSlots: [FactModel] = []
     var factBuffer: FactModel?
     
-    init(firstRowFullDownButton: UIButton,
-         secondRowHalfUpButton: UIButton,
-         secondRowHalfDownButton: UIButton,
-         thirdRowHalfUpButton: UIButton,
-         thirdRowHalfDownButton: UIButton,
-         fourthRowFullUpButton: UIButton,
-         timerLabel: UILabel,
-         shakeLabel: UILabel,
-         firstRowFactButton: UIButton,
-         secondRowFactButton: UIButton,
-         thirdRowFactButton: UIButton,
-         fourthRowFactButton: UIButton) {
+    init(gameplayViewController: GameplayViewController,
+         gameplayArrowButtonsHandler: GameplayArrowButtonsHandler,
+         gameplayControlButtonsHandler: GameplayControlButtonsHandler,
+         gameplayLabelsHandler: GameplayLabelsHandler,
+         countdownTimer: CountdownTimer) {
+            roundsPlayed = 0
+            correctAnswers = 0
         
-        gameplayArrowButtonsHandler = GameplayArrowButtonsHandler(firstRowFullDownButton: firstRowFullDownButton,
-                                                                  secondRowHalfUpButton: secondRowHalfUpButton,
-                                                                  secondRowHalfDownButton: secondRowHalfDownButton,
-                                                                  thirdRowHalfUpButton: thirdRowHalfUpButton,
-                                                                  thirdRowHalfDownButton: thirdRowHalfDownButton,
-                                                                  fourthRowFullUpButton: fourthRowFullUpButton)
-        
-        gameplayFactButtonsHandler = GameplayFactButtonsHandler(firstRowFactButton: firstRowFactButton,
-                                                                secondRowFactButton: secondRowFactButton,
-                                                                thirdRowFactButton: thirdRowFactButton,
-                                                                fourthRowFactButton: fourthRowFactButton)
-        
-        gameplayLabelsHandler = GameplayLabelsHandler(timerLabel: timerLabel,
-                                                      shakeLabel: shakeLabel)
-        
-        countdownTimer = CountdownTimer(timerLabel: timerLabel)
-        
-        roundsPlayed = 0
-        
+            self.gameplayViewController = gameplayViewController
+            self.gameplayArrowButtonsHandler = gameplayArrowButtonsHandler
+            self.gameplayControlButtonsHandler = gameplayControlButtonsHandler
+            self.gameplayLabelsHandler = gameplayLabelsHandler
+            self.countdownTimer = countdownTimer
     }
     
     func setFactsToSlots () {
@@ -75,23 +59,27 @@ class Gameplay {
     
     func setFactButtonsCaptions() {
         do {
-            try gameplayFactButtonsHandler.setFacts(factSlots: factSlots)
+            try gameplayControlButtonsHandler.setFacts(factSlots: factSlots)
         } catch Errors.factSlotsArray("factSlots Array is corrupt - length is not 4!") {
-            gameplayFactButtonsHandler.showError()
+            gameplayControlButtonsHandler.showError()
         } catch {
-            gameplayFactButtonsHandler.showError()
+            gameplayControlButtonsHandler.showError()
         }
     }
     
     func setGameScreen () {
+        gameplayLabelsHandler.unhideTimerLabel()
+        gameplayControlButtonsHandler.hideControlButton()
+        gameplayControlButtonsHandler.enableControlButton()
         gameplayLabelsHandler.setShakeLabel(to: .shakeToComplete)
         gameplayArrowButtonsHandler.enableArrowButtons()
-        gameplayFactButtonsHandler.disableFactButtons()
+        gameplayControlButtonsHandler.disableFactButtons()
         setFactsToSlots()
         setFactButtonsCaptions()
-        countdownTimer?.startTimer()
+        countdownTimer.startTimer()
         roundsPlayed += 1
     }
+    
     
     func setFactBuffer (for fact: FactModel?) {
         guard let unwrappedFact = fact else {
@@ -146,21 +134,33 @@ class Gameplay {
         case ButtonNames.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
         case ButtonNames.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
         case ButtonNames.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
+        case ButtonNames.controlButton.rawValue:setGameScreen()
         default: fatalError("button with no title assigned been pressed, most likely someting went wrong in the GamplayViewController class")
         }
     }
     
     func setCheckScreen () {
+        if checkOrder() {
+            gameplayControlButtonsHandler.setWinButton()
+            correctAnswers += 1
+        } else {
+            gameplayControlButtonsHandler.setLoseButton()
+        }
         gameplayLabelsHandler.setShakeLabel(to: .tapEventsToLearnMore)
         gameplayArrowButtonsHandler.disableArrowButtons()
-        gameplayFactButtonsHandler.enableFactButtons()
-        
+        gameplayControlButtonsHandler.enableFactButtons()
+        gameplayLabelsHandler.hideTimerLabel()
+        gameplayControlButtonsHandler.unhideControlButton()
+        if roundsPlayed == numberOfRounds {
+            gameplayControlButtonsHandler.disableControlButton()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                //
+            })
+        }
     }
     
     func shakeGesture () {
-        if checkOrder() {
-            
+            countdownTimer.endTimer()
         }
-    }
     
 }

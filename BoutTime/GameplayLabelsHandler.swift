@@ -13,10 +13,9 @@ class GameplayLabelsHandler {
     var timerLabel: UILabel
     let shakeLabel: UILabel
     
-    init(timerLabel: UILabel,
-         shakeLabel: UILabel) {
-        self.timerLabel = timerLabel
-        self.shakeLabel = shakeLabel
+    init(gameplayViewController : GameplayViewController) {
+        self.timerLabel = gameplayViewController.timerLabel
+        self.shakeLabel = gameplayViewController.shakeLabel
     }
     
     func setShakeLabel(to captions: ShakeLabel) {
@@ -26,12 +25,12 @@ class GameplayLabelsHandler {
         }
     }
     
-    func setCorrectPic () {
-        timerLabel.backgroundColor = UIColor(patternImage: UIImage(named: "next_round_success")!)
+    func hideTimerLabel () {
+        timerLabel.isHidden = true
     }
     
-    func setWrongPic () {
-        timerLabel.backgroundColor = UIColor(patternImage: UIImage(named: "next_round_fail")!)
+    func unhideTimerLabel () {
+        timerLabel.isHidden = false
     }
     
 }

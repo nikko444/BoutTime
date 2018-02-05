@@ -8,20 +8,19 @@
 
 import UIKit
 
-class GameplayFactButtonsHandler {
+class GameplayControlButtonsHandler {
     let firstRowFactButton: UIButton
     let secondRowFactButton: UIButton
     let thirdRowFactButton: UIButton
     let fourthRowFactButton: UIButton
+    let controlButton: UIButton
     
-    init (firstRowFactButton: UIButton,
-          secondRowFactButton: UIButton,
-          thirdRowFactButton: UIButton,
-          fourthRowFactButton: UIButton) {
-        self.firstRowFactButton = firstRowFactButton
-        self.secondRowFactButton = secondRowFactButton
-        self.thirdRowFactButton = thirdRowFactButton
-        self.fourthRowFactButton = fourthRowFactButton
+    init(gameplayViewController : GameplayViewController) {
+        self.firstRowFactButton = gameplayViewController.firstRowFactButton
+        self.secondRowFactButton = gameplayViewController.secondRowFactButton
+        self.thirdRowFactButton = gameplayViewController.thirdRowFactButton
+        self.fourthRowFactButton = gameplayViewController.fourthRowFactButton
+        self.controlButton = gameplayViewController.controlButton
     }
     
     func setFacts (factSlots : [FactModel]) throws {
@@ -79,6 +78,30 @@ class GameplayFactButtonsHandler {
         secondRowFactButton.isEnabled = true
         thirdRowFactButton.isEnabled = true
         fourthRowFactButton.isEnabled = true
+    }
+    
+    func hideControlButton () {
+        controlButton.isHidden = true
+    }
+    
+    func unhideControlButton () {
+        controlButton.isHidden = false
+    }
+    
+    func setWinButton () {
+        controlButton.setImage(UIImage(named: "next_round_success"), for: .normal)
+    }
+    
+    func setLoseButton () {
+        controlButton.setImage(UIImage(named: "next_round_fail"), for: .normal)
+    }
+    
+    func disableControlButton () {
+        controlButton.isEnabled = false
+    }
+    
+    func enableControlButton () {
+        controlButton.isEnabled = true
     }
     
 }

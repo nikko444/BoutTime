@@ -15,7 +15,7 @@
 		8A68C7CA200C3C3F00EFA962 /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */; };
 		8A90038320196AE700E6537F /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038220196AE700E6537F /* Gameplay.swift */; };
 		8A900385201989EF00E6537F /* GameplayArrowButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */; };
-		8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */; };
+		8A90038720198CB500E6537F /* GameplayControlButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038620198CB500E6537F /* GameplayControlButtonsHandler.swift */; };
 		8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */; };
 		8ACC2C34201192A700616EED /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C33201192A700616EED /* Enums.swift */; };
 		8ACC2C36201196D800616EED /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2C35201196D800616EED /* ErrorEnum.swift */; };
@@ -35,7 +35,7 @@
 		8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		8A90038220196AE700E6537F /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayArrowButtonsHandler.swift; sourceTree = "<group>"; };
-		8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayFactButtonsHandler.swift; sourceTree = "<group>"; };
+		8A90038620198CB500E6537F /* GameplayControlButtonsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayControlButtonsHandler.swift; sourceTree = "<group>"; };
 		8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayLabelsHandler.swift; sourceTree = "<group>"; };
 		8ACC2C33201192A700616EED /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8ACC2C35201196D800616EED /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
@@ -78,8 +78,9 @@
 				8A68C7C5200C3AC900EFA962 /* SplashViewController.swift */,
 				8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */,
 				8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */,
-				8A90038620198CB500E6537F /* GameplayFactButtonsHandler.swift */,
+				8A90038620198CB500E6537F /* GameplayControlButtonsHandler.swift */,
 				8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */,
+				8ACC2C372013D41A00616EED /* CountdownTimer.swift */,
 				8A90038220196AE700E6537F /* Gameplay.swift */,
 				8ACC2C392014084200616EED /* FactProvider.swift */,
 				8ACC2C3B2014135200616EED /* FactModel.swift */,
@@ -89,7 +90,6 @@
 				8A68C7BD20092E9000EFA962 /* Info.plist */,
 				8ACC2C33201192A700616EED /* Enums.swift */,
 				8ACC2C35201196D800616EED /* ErrorEnum.swift */,
-				8ACC2C372013D41A00616EED /* CountdownTimer.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				8ACC2C382013D41A00616EED /* CountdownTimer.swift in Sources */,
 				8A68C7B220092E8F00EFA962 /* AppDelegate.swift in Sources */,
 				8ACC2C3A2014084200616EED /* FactProvider.swift in Sources */,
-				8A90038720198CB500E6537F /* GameplayFactButtonsHandler.swift in Sources */,
+				8A90038720198CB500E6537F /* GameplayControlButtonsHandler.swift in Sources */,
 				8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */,
 				8ACC2C34201192A700616EED /* Enums.swift in Sources */,
 				8A68C7C6200C3AC900EFA962 /* SplashViewController.swift in Sources */,

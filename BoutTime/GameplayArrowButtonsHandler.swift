@@ -17,18 +17,13 @@ class GameplayArrowButtonsHandler {
     let thirdRowHalfDownButton: UIButton
     let fourthRowFullUpButton: UIButton
     
-    init(firstRowFullDownButton: UIButton,
-         secondRowHalfUpButton: UIButton,
-         secondRowHalfDownButton: UIButton,
-         thirdRowHalfUpButton: UIButton,
-         thirdRowHalfDownButton: UIButton,
-         fourthRowFullUpButton: UIButton) {
-        self.firstRowFullDownButton = firstRowFullDownButton
-        self.secondRowHalfUpButton = secondRowHalfUpButton
-        self.secondRowHalfDownButton = secondRowHalfDownButton
-        self.thirdRowHalfUpButton = thirdRowHalfUpButton
-        self.thirdRowHalfDownButton = thirdRowHalfDownButton
-        self.fourthRowFullUpButton = fourthRowFullUpButton
+    init(gameplayViewController : GameplayViewController) {
+        self.firstRowFullDownButton = gameplayViewController.firstRowFullDownButton
+        self.secondRowHalfUpButton = gameplayViewController.secondRowHalfUpButton
+        self.secondRowHalfDownButton = gameplayViewController.secondRowHalfDownButton
+        self.thirdRowHalfUpButton = gameplayViewController.thirdRowHalfUpButton
+        self.thirdRowHalfDownButton = gameplayViewController.thirdRowHalfDownButton
+        self.fourthRowFullUpButton = gameplayViewController.fourthRowFullUpButton
     }
     
     func disableArrowButtons () {

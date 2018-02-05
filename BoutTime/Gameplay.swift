@@ -133,15 +133,16 @@ class Gameplay {
         }
     }
     
-    func arrowButtonPressed(_ sender: ButtonTags.RawValue) {
-        switch sender {
-        case .firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
+    func arrowButtonPressed(_ sender: UIButton) {
+        switch sender.tag {
+        case ButtonTags.firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
         case ButtonTags.secondRowHalfUp.rawValue: moveFact(for: .firstAndSecond)
         case ButtonTags.secondRowHalfDown.rawValue: moveFact(for: .secondAndThird)
         case ButtonTags.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
         case ButtonTags.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
         case ButtonTags.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
         case ButtonTags.controlButton.rawValue:setGameScreen()
+        default: fatalError("button with no tag assigned been pressed, most likely someting went wrong in the GameplayArrowButtonsHandler or GameplayControlButtonsHandler class")
         }
     }
     

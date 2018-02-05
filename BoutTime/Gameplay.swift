@@ -67,6 +67,23 @@ class Gameplay {
         }
     }
     
+    func startNewGame () {
+        for factRowView in gameplayViewController.factRowViews {  //MARK: Applying round corners
+            factRowView.layer.cornerRadius = 5;
+            factRowView.layer.masksToBounds = true;
+        }
+        gameplayViewController.firstRowFullDownButton.setTitle(ButtonNames.firstRowFullDown.rawValue, for: .normal)
+        gameplayViewController.secondRowHalfUpButton.setTitle(ButtonNames.secondRowHalfUp.rawValue, for: .normal)
+        gameplayViewController.secondRowHalfDownButton.setTitle(ButtonNames.secondRowHalfDown.rawValue, for: .normal)
+        gameplayViewController.thirdRowHalfUpButton.setTitle(ButtonNames.thirdRowHalfUp.rawValue, for: .normal)
+        gameplayViewController.thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
+        gameplayViewController.fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
+        gameplayViewController.controlButton.setTitle(ButtonNames.controlButton.rawValue, for: .normal)
+        setGameScreen()
+        roundsPlayed = 0
+        correctAnswers = 0
+    }
+    
     func setGameScreen () {
         gameplayLabelsHandler.unhideTimerLabel()
         gameplayControlButtonsHandler.hideControlButton()

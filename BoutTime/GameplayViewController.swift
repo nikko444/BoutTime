@@ -52,7 +52,7 @@ class GameplayViewController: UIViewController {
             let unwrappedGameplayControlButtonsHandler = gameplayControlButtonsHandler,
             let unwrappedGameplayLabelsHandler = gameplayLabelsHandler,
             let unwrappedCountdownTimer = countdownTimer else {
-                fatalError("One of the Controllers failed to initialize in the body of a GameplayViewController.")
+                fatalError("Critical Error! One of the Controllers failed to initialize in the body of a GameplayViewController.")
         }
         
         gameplay = Gameplay(gameplayViewController: self,
@@ -61,21 +61,7 @@ class GameplayViewController: UIViewController {
                             gameplayLabelsHandler: unwrappedGameplayLabelsHandler,
                             countdownTimer: unwrappedCountdownTimer)
         
-        for factRowView in factRowViews {  //MARK: Applying round corners
-            factRowView.layer.cornerRadius = 5;
-            factRowView.layer.masksToBounds = true;
-        }
-        
-        firstRowFullDownButton.setTitle(ButtonNames.firstRowFullDown.rawValue, for: .normal)
-        secondRowHalfUpButton.setTitle(ButtonNames.secondRowHalfUp.rawValue, for: .normal)
-        secondRowHalfDownButton.setTitle(ButtonNames.secondRowHalfDown.rawValue, for: .normal)
-        thirdRowHalfUpButton.setTitle(ButtonNames.thirdRowHalfUp.rawValue, for: .normal)
-        thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
-        fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
-        controlButton.setTitle(ButtonNames.controlButton.rawValue, for: .normal)
-    
-        
-        gameplay?.setGameScreen()
+        gameplay?.startNewGame()
         
     }
 

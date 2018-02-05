@@ -24,6 +24,13 @@ class GameplayArrowButtonsHandler {
         self.thirdRowHalfUpButton = gameplayViewController.thirdRowHalfUpButton
         self.thirdRowHalfDownButton = gameplayViewController.thirdRowHalfDownButton
         self.fourthRowFullUpButton = gameplayViewController.fourthRowFullUpButton
+        
+        self.firstRowFullDownButton.tag = ButtonTags.firstRowFullDown.rawValue
+        self.secondRowHalfUpButton.tag = ButtonTags.secondRowHalfUp.rawValue
+        self.secondRowHalfDownButton.tag = ButtonTags.secondRowHalfDown.rawValue
+        self.thirdRowHalfUpButton.tag = ButtonTags.thirdRowHalfUp.rawValue
+        self.thirdRowHalfDownButton.tag = ButtonTags.thirdRowHalfDown.rawValue
+        self.fourthRowFullUpButton.tag = ButtonTags.fourthRowFullUp.rawValue
     }
     
     func disableArrowButtons () {

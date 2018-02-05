@@ -13,17 +13,16 @@ class CountdownTimer {
     var countdownTimer: Timer!
     var totalTime = 60
     var timerLabel: UILabel
-    var gameplay: Gameplay
+    var gameplay: Gameplay?
     
     init (gameplayViewController: GameplayViewController) {
         self.timerLabel = gameplayViewController.timerLabel
-        guard let unwrappedGameplay = gameplayViewController.gameplay else {
-            fatalError("Gameplay variable failed to initialize in the body of a GameplayViewController.")
-        }
-        self.gameplay = unwrappedGameplay
+    }
+    
+    func set (gameplay: Gameplay) {
+        self.gameplay = gameplay
     }
 
-    
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
@@ -40,7 +39,9 @@ class CountdownTimer {
     
     func endTimer() {
         countdownTimer.invalidate()
-        gameplay.setCheckScreen()
+        timerLabel.text = "01:00"
+        totalTime = 60
+        gameplay?.setCheckScreen()
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {

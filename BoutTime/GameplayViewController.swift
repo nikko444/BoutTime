@@ -61,7 +61,12 @@ class GameplayViewController: UIViewController {
                             gameplayLabelsHandler: unwrappedGameplayLabelsHandler,
                             countdownTimer: unwrappedCountdownTimer)
         
-        gameplay?.startNewGame()
+        guard let unwrappedGameplay = gameplay else {
+            fatalError("Critical Error! gameplay variable failed to initialize!")
+        }
+        
+        unwrappedCountdownTimer.set (gameplay: unwrappedGameplay)
+        unwrappedGameplay.startNewGame()
         
     }
 
@@ -74,7 +79,7 @@ class GameplayViewController: UIViewController {
         guard let unwrappedGameplay = gameplay else {
             fatalError("Critical Error! Gameplay class was not initialized in the body of a GameplayViewController.")
         }
-        unwrappedGameplay.arrowButtonPressed(sender)
+        unwrappedGameplay.arrowButtonPressed(sender.tag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -72,13 +72,6 @@ class Gameplay {
             factRowView.layer.cornerRadius = 5;
             factRowView.layer.masksToBounds = true;
         }
-        gameplayViewController.firstRowFullDownButton.setTitle(ButtonNames.firstRowFullDown.rawValue, for: .normal)
-        gameplayViewController.secondRowHalfUpButton.setTitle(ButtonNames.secondRowHalfUp.rawValue, for: .normal)
-        gameplayViewController.secondRowHalfDownButton.setTitle(ButtonNames.secondRowHalfDown.rawValue, for: .normal)
-        gameplayViewController.thirdRowHalfUpButton.setTitle(ButtonNames.thirdRowHalfUp.rawValue, for: .normal)
-        gameplayViewController.thirdRowHalfDownButton.setTitle(ButtonNames.thirdRowHalfDown.rawValue, for: .normal)
-        gameplayViewController.fourthRowFullUpButton.setTitle(ButtonNames.fourthRowFullUp.rawValue, for: .normal)
-        gameplayViewController.controlButton.setTitle(ButtonNames.controlButton.rawValue, for: .normal)
         setGameScreen()
         roundsPlayed = 0
         correctAnswers = 0
@@ -105,7 +98,7 @@ class Gameplay {
         factBuffer = unwrappedFact
     }
     
-    func getFactBuffer () -> FactModel{
+    func getFactBuffer () -> FactModel {
         guard let unwrappedFactBuffer = factBuffer else {
             fatalError("getFactBuffer method Error! factSlots array must be corrupt")
         }
@@ -140,19 +133,15 @@ class Gameplay {
         }
     }
     
-    func arrowButtonPressed(_ sender: UIButton) {
-        guard let buttonTitle = sender.title(for: .normal) else {
-            fatalError("button with no title assigned been pressed, most likely someting went wrong in the GamplayViewController class")
-        }
-        switch buttonTitle {
-        case ButtonNames.firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
-        case ButtonNames.secondRowHalfUp.rawValue: moveFact(for: .firstAndSecond)
-        case ButtonNames.secondRowHalfDown.rawValue: moveFact(for: .secondAndThird)
-        case ButtonNames.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
-        case ButtonNames.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
-        case ButtonNames.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
-        case ButtonNames.controlButton.rawValue:setGameScreen()
-        default: fatalError("button with no title assigned been pressed, most likely someting went wrong in the GamplayViewController class")
+    func arrowButtonPressed(_ sender: ButtonTags.RawValue) {
+        switch sender {
+        case .firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
+        case ButtonTags.secondRowHalfUp.rawValue: moveFact(for: .firstAndSecond)
+        case ButtonTags.secondRowHalfDown.rawValue: moveFact(for: .secondAndThird)
+        case ButtonTags.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
+        case ButtonTags.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
+        case ButtonTags.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
+        case ButtonTags.controlButton.rawValue:setGameScreen()
         }
     }
     

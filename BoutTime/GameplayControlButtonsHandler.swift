@@ -21,6 +21,8 @@ class GameplayControlButtonsHandler {
         self.thirdRowFactButton = gameplayViewController.thirdRowFactButton
         self.fourthRowFactButton = gameplayViewController.fourthRowFactButton
         self.controlButton = gameplayViewController.controlButton
+        
+        self.controlButton.tag = ButtonTags.controlButton.rawValue
     }
     
     func setFacts (factSlots : [FactModel]) throws {

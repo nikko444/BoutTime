@@ -6,14 +6,14 @@
 //  Copyright © 2018 nikko444. All rights reserved.
 //
 
-enum ButtonNames: String {
-    case firstRowFullDown = "1"
-    case secondRowHalfUp = "2U"
-    case secondRowHalfDown = "2D"
-    case thirdRowHalfUp = "3U"
-    case thirdRowHalfDown = "3D"
-    case fourthRowFullUp = "4"
-    case controlButton = "Control Button"
+enum ButtonTags : Int {
+    case firstRowFullDown = 1
+    case secondRowHalfUp = 2
+    case secondRowHalfDown = 3
+    case thirdRowHalfUp = 4
+    case thirdRowHalfDown = 5
+    case fourthRowFullUp = 6
+    case controlButton = 7
 }
 
 enum MoveFactOptions {

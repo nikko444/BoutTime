@@ -34,6 +34,7 @@ class Gameplay {
          countdownTimer: CountdownTimer) {
             roundsPlayed = 0
             correctAnswers = 0
+            numberOfRounds -= 1 //To match the actual number of rounds to represent the number in the declaration.
         
             self.gameplayViewController = gameplayViewController
             self.gameplayArrowButtonsHandler = gameplayArrowButtonsHandler
@@ -78,12 +79,9 @@ class Gameplay {
     }
     
     func setGameScreen () {
-        gameplayLabelsHandler.unhideTimerLabel()
-        gameplayControlButtonsHandler.hideControlButton()
-        gameplayControlButtonsHandler.enableControlButton()
-        gameplayLabelsHandler.setShakeLabel(to: .shakeToComplete)
+        gameplayLabelsHandler.setGameScreen()
+        gameplayControlButtonsHandler.setGameScreen()
         gameplayArrowButtonsHandler.enableArrowButtons()
-        gameplayControlButtonsHandler.disableFactButtons()
         setFactsToSlots()
         setFactButtonsCaptions()
         countdownTimer.startTimer()
@@ -127,9 +125,25 @@ class Gameplay {
         if (factSlots[0].getDate() <= factSlots[1].getDate()) &&
            (factSlots[1].getDate() <= factSlots[2].getDate()) &&
            (factSlots[2].getDate() <= factSlots[3].getDate()){
+            correctAnswers += 1
             return true
         } else {
             return false
+        }
+    }
+    
+    func isLastRound () -> Bool {
+        if roundsPlayed == numberOfRounds {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func checkRoundState (order: Bool) -> RoundOutcome {
+        switch order {
+        case true : if isLastRound() {return .scoreWon} else {return .nextWon}
+        case false : if isLastRound() {return .scoreLose} else {return .nextLose}
         }
     }
     
@@ -141,29 +155,22 @@ class Gameplay {
         case ButtonTags.thirdRowHalfUp.rawValue: moveFact(for: .secondAndThird)
         case ButtonTags.thirdRowHalfDown.rawValue: moveFact(for: .thirdAndFourth)
         case ButtonTags.fourthRowFullUp.rawValue: moveFact(for: .thirdAndFourth)
-        case ButtonTags.controlButton.rawValue:setGameScreen()
+        case ButtonTags.controlButton.rawValue: if isLastRound() {gameplayViewController.showScore()} else {setGameScreen()}
         default: fatalError("button with no tag assigned been pressed, most likely someting went wrong in the GameplayArrowButtonsHandler or GameplayControlButtonsHandler class")
         }
     }
     
     func setCheckScreen () {
-        if checkOrder() {
-            gameplayControlButtonsHandler.setWinButton()
-            correctAnswers += 1
-        } else {
-            gameplayControlButtonsHandler.setLoseButton()
+        let roundOutcome = checkRoundState(order: checkOrder())
+        switch roundOutcome {
+        case .nextWon: gameplayControlButtonsHandler.setWinNextButton()
+        case .nextLose: gameplayControlButtonsHandler.setLoseNextButton()
+        case .scoreWon: gameplayControlButtonsHandler.setWinCheckButton()
+        case .scoreLose: gameplayControlButtonsHandler.setLoseCheckButton()
         }
-        gameplayLabelsHandler.setShakeLabel(to: .tapEventsToLearnMore)
+        gameplayLabelsHandler.setCheckScreen()
         gameplayArrowButtonsHandler.disableArrowButtons()
-        gameplayControlButtonsHandler.enableFactButtons()
-        gameplayLabelsHandler.hideTimerLabel()
-        gameplayControlButtonsHandler.unhideControlButton()
-        if roundsPlayed == numberOfRounds {
-            gameplayControlButtonsHandler.disableControlButton()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                //
-            })
-        }
+        gameplayControlButtonsHandler.setCheckScreen()
     }
     
     func shakeGesture () {

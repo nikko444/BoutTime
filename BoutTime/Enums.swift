@@ -6,6 +6,8 @@
 //  Copyright © 2018 nikko444. All rights reserved.
 //
 
+import UIKit
+
 enum ButtonTags : Int {
     case firstRowFullDown = 1
     case secondRowHalfUp = 2
@@ -25,4 +27,11 @@ enum MoveFactOptions {
 enum ShakeLabel: String {
      case shakeToComplete = "Shake to complete"
      case tapEventsToLearnMore = "Tap facts to learn more"
+}
+
+enum RoundOutcome : String {
+    case nextWon = "next_round_success"
+    case nextLose = "next_round_fail"
+    case scoreWon = "check_score_success"
+    case scoreLose = "check_score_fail"
 }

@@ -83,11 +83,17 @@ class GameplayViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //TODO: Come up with the logic for the segue change
+        guard let correctAnswers = gameplay?.correctAnswers,
+            let numberOfRounds = gameplay?.numberOfRounds
+            else {
+                fatalError("Critical Error! Most likely the gameplay variable failed to initialize in the body of a GameplayViewController.")
+        }
+        let scoreViewController = segue.destination as! ScoreViewController
+        scoreViewController.scoreString = String(format: "%01d/%01d", correctAnswers, numberOfRounds + 1)
     }
     
     func showScore () {
-        self.performSegue(withIdentifier: "gameplayToScore", sender: self)
+            self.performSegue(withIdentifier: "gameplayToScore", sender: self)
     }
         
     /*

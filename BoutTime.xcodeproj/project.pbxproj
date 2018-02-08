@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3B5652202BF341003047B6 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B5651202BF341003047B6 /* ScoreViewController.swift */; };
+		8A3B5654202BF381003047B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B5653202BF381003047B6 /* WebViewController.swift */; };
 		8A68C7B220092E8F00EFA962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68C7B120092E8F00EFA962 /* AppDelegate.swift */; };
 		8A68C7B720092E8F00EFA962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7B520092E8F00EFA962 /* Main.storyboard */; };
 		8A68C7B920092E8F00EFA962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A68C7B820092E8F00EFA962 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A3B5651202BF341003047B6 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		8A3B5653202BF381003047B6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8A68C7AE20092E8F00EFA962 /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A68C7B120092E8F00EFA962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A68C7B620092E8F00EFA962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				8A68C7B120092E8F00EFA962 /* AppDelegate.swift */,
 				8A68C7C5200C3AC900EFA962 /* SplashViewController.swift */,
 				8A68C7C9200C3C3F00EFA962 /* GameplayViewController.swift */,
+				8A3B5651202BF341003047B6 /* ScoreViewController.swift */,
 				8A900384201989EF00E6537F /* GameplayArrowButtonsHandler.swift */,
 				8A90038620198CB500E6537F /* GameplayControlButtonsHandler.swift */,
 				8A90038820198FB700E6537F /* GameplayLabelsHandler.swift */,
@@ -90,6 +95,7 @@
 				8A68C7BD20092E9000EFA962 /* Info.plist */,
 				8ACC2C33201192A700616EED /* Enums.swift */,
 				8ACC2C35201196D800616EED /* ErrorEnum.swift */,
+				8A3B5653202BF381003047B6 /* WebViewController.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -171,11 +177,13 @@
 				8A900385201989EF00E6537F /* GameplayArrowButtonsHandler.swift in Sources */,
 				8ACC2C382013D41A00616EED /* CountdownTimer.swift in Sources */,
 				8A68C7B220092E8F00EFA962 /* AppDelegate.swift in Sources */,
+				8A3B5652202BF341003047B6 /* ScoreViewController.swift in Sources */,
 				8ACC2C3A2014084200616EED /* FactProvider.swift in Sources */,
 				8A90038720198CB500E6537F /* GameplayControlButtonsHandler.swift in Sources */,
 				8A90038920198FB700E6537F /* GameplayLabelsHandler.swift in Sources */,
 				8ACC2C34201192A700616EED /* Enums.swift in Sources */,
 				8A68C7C6200C3AC900EFA962 /* SplashViewController.swift in Sources */,
+				8A3B5654202BF381003047B6 /* WebViewController.swift in Sources */,
 				8A90038320196AE700E6537F /* Gameplay.swift in Sources */,
 				8A68C7CA200C3C3F00EFA962 /* GameplayViewController.swift in Sources */,
 			);

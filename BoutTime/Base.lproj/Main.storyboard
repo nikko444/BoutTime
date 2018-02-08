@@ -259,6 +259,7 @@
                                 <rect key="frame" x="88" y="490" width="144" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XGL-tw-efN"/>
+                                    <constraint firstAttribute="width" secondItem="gVE-bJ-Y6o" secondAttribute="height" multiplier="18:5" id="gQR-yD-XXw"/>
                                 </constraints>
                                 <state key="normal" title="Control Button" image="next_round_success"/>
                                 <connections>
@@ -271,7 +272,7 @@
                             <constraint firstItem="DCR-Tw-WFC" firstAttribute="top" secondItem="KBB-sz-Jnq" secondAttribute="top" constant="10" id="E6q-X1-efe"/>
                             <constraint firstItem="DCR-Tw-WFC" firstAttribute="centerX" secondItem="M4q-eZ-Mmh" secondAttribute="centerX" id="GZQ-vJ-Fjp"/>
                             <constraint firstItem="VMu-xK-5uX" firstAttribute="top" secondItem="kfz-h1-mNw" secondAttribute="bottom" constant="2" id="HQv-7o-liD"/>
-                            <constraint firstItem="gVE-bJ-Y6o" firstAttribute="width" secondItem="M4q-eZ-Mmh" secondAttribute="width" multiplier="0.45" id="IdD-nD-BwT"/>
+                            <constraint firstItem="gVE-bJ-Y6o" firstAttribute="width" secondItem="M4q-eZ-Mmh" secondAttribute="width" multiplier="0.45" priority="999" id="IdD-nD-BwT"/>
                             <constraint firstItem="kfz-h1-mNw" firstAttribute="top" secondItem="DCR-Tw-WFC" secondAttribute="bottom" constant="3" id="M1C-pu-hYk"/>
                             <constraint firstItem="VMu-xK-5uX" firstAttribute="top" secondItem="gVE-bJ-Y6o" secondAttribute="bottom" constant="12" id="axD-Eg-2nl"/>
                             <constraint firstItem="gVE-bJ-Y6o" firstAttribute="centerX" secondItem="M4q-eZ-Mmh" secondAttribute="centerX" id="ex6-r6-Kb3"/>
@@ -311,8 +312,7 @@
         <!--Score View Controller-->
         <scene sceneID="6uj-fu-PcR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNH-0R-Do7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="WzR-9a-fyq" userLabel="Score View Controller" sceneMemberID="viewController">
+                <viewController id="WzR-9a-fyq" userLabel="Score View Controller" customClass="ScoreViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g63-ew-7bj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,6 +336,9 @@
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="0.98815220589999997" green="0.98829025029999995" blue="0.98810869459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playAgainButtonPressed:" destination="WzR-9a-fyq" eventType="touchUpInside" id="Vxt-MN-BKg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1617647707" blue="0.29217523340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,9 +353,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="63m-8d-u0L"/>
                     </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="4a5-Hc-vGO" id="dxB-Hn-UF6"/>
+                        <outlet property="scoreLabel" destination="ywj-kb-ISf" id="P1J-he-LfM"/>
+                        <segue destination="Kpw-v1-jYa" kind="show" identifier="scoreToGameplay" id="BkQ-Lw-ce0"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNH-0R-Do7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="131"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="81z-Ej-Oqk">
+            <objects>
+                <viewController id="qd6-Jb-2kv" customClass="WebViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ILq-kZ-4oU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-Bs-j1V">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cwd-Zm-e5t" firstAttribute="bottom" secondItem="5gK-Bs-j1V" secondAttribute="bottom" id="VOs-f7-DYv"/>
+                            <constraint firstItem="Cwd-Zm-e5t" firstAttribute="trailing" secondItem="5gK-Bs-j1V" secondAttribute="trailing" id="YBQ-dq-3CC"/>
+                            <constraint firstItem="5gK-Bs-j1V" firstAttribute="top" secondItem="Cwd-Zm-e5t" secondAttribute="top" id="gPb-HV-lC1"/>
+                            <constraint firstItem="5gK-Bs-j1V" firstAttribute="leading" secondItem="Cwd-Zm-e5t" secondAttribute="leading" id="ll8-vh-l11"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cwd-Zm-e5t"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGZ-cP-nCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="856"/>
         </scene>
     </scenes>
     <resources>
@@ -363,4 +403,8 @@
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DTs-UT-UlS"/>
+        <segue reference="BkQ-Lw-ce0"/>
+    </inferredMetricsTieBreakers>
 </document>

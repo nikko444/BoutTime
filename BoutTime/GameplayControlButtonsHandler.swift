@@ -25,6 +25,17 @@ class GameplayControlButtonsHandler {
         self.controlButton.tag = ButtonTags.controlButton.rawValue
     }
     
+    func setGameScreen () {
+        hideControlButton()
+        enableControlButton()
+        disableFactButtons()
+    }
+    
+    func setCheckScreen () {
+        enableFactButtons()
+        unhideControlButton()
+    }
+    
     func setFacts (factSlots : [FactModel]) throws {
         
         if (factSlots.count != 4) {
@@ -90,12 +101,20 @@ class GameplayControlButtonsHandler {
         controlButton.isHidden = false
     }
     
-    func setWinButton () {
-        controlButton.setImage(UIImage(named: "next_round_success"), for: .normal)
+    func setWinNextButton () {
+        controlButton.setImage(UIImage(named: RoundOutcome.nextWon.rawValue), for: .normal)
     }
     
-    func setLoseButton () {
-        controlButton.setImage(UIImage(named: "next_round_fail"), for: .normal)
+    func setLoseNextButton () {
+        controlButton.setImage(UIImage(named: RoundOutcome.nextLose.rawValue), for: .normal)
+    }
+    
+    func setWinCheckButton () {
+        controlButton.setImage(UIImage(named: RoundOutcome.scoreWon.rawValue), for: .normal)
+    }
+    
+    func setLoseCheckButton () {
+        controlButton.setImage(UIImage(named: RoundOutcome.scoreLose.rawValue), for: .normal)
     }
     
     func disableControlButton () {

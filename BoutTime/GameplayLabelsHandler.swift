@@ -18,6 +18,16 @@ class GameplayLabelsHandler {
         self.shakeLabel = gameplayViewController.shakeLabel
     }
     
+    func setGameScreen () {
+        unhideTimerLabel()
+        setShakeLabel(to: .shakeToComplete)
+    }
+    
+    func setCheckScreen () {
+        setShakeLabel(to: .tapEventsToLearnMore)
+        hideTimerLabel()
+    }
+    
     func setShakeLabel(to captions: ShakeLabel) {
         switch captions {
         case .shakeToComplete: shakeLabel.text = ShakeLabel.shakeToComplete.rawValue

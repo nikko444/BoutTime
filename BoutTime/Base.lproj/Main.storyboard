@@ -67,6 +67,9 @@
                                                         <state key="normal" title="First row fact">
                                                             <color key="titleColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="factButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="jFS-Jv-Shq"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kL7-hC-DHF">
                                                         <rect key="frame" x="232" y="0.0" width="38" height="105"/>
@@ -78,7 +81,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="38" height="105"/>
                                                                         <state key="normal" title="Button" image="down_full"/>
                                                                         <connections>
-                                                                            <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="bDR-cR-Oh2"/>
+                                                                            <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="bDR-cR-Oh2"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -112,6 +115,9 @@
                                                         <state key="normal" title="Second row fact">
                                                             <color key="titleColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="factButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="814-I7-sOl"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-ZF-Gpb">
                                                         <rect key="frame" x="232" y="0.0" width="38" height="105"/>
@@ -120,7 +126,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="52.5"/>
                                                                 <state key="normal" title="Button" image="up_half"/>
                                                                 <connections>
-                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="qgE-Np-e4t"/>
+                                                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="qgE-Np-e4t"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-Oz-y03">
@@ -128,7 +134,7 @@
                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                                 <state key="normal" title="Button" image="down_half"/>
                                                                 <connections>
-                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="1oM-55-ZKE"/>
+                                                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="1oM-55-ZKE"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -160,6 +166,9 @@
                                                         <state key="normal" title="Third row fact">
                                                             <color key="titleColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="factButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="mDg-Bo-8PM"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uyj-OT-3xG">
                                                         <rect key="frame" x="232" y="0.0" width="38" height="105"/>
@@ -168,14 +177,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="52.5"/>
                                                                 <state key="normal" title="Button" image="up_half"/>
                                                                 <connections>
-                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="gTJ-aT-ObS"/>
+                                                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="gTJ-aT-ObS"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-b8-Qys">
                                                                 <rect key="frame" x="0.0" y="52.5" width="38" height="52.5"/>
                                                                 <state key="normal" title="Button" image="down_half"/>
                                                                 <connections>
-                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="dwc-BY-v65"/>
+                                                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="dwc-BY-v65"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -207,6 +216,9 @@
                                                         <state key="normal" title="Fourth row fact">
                                                             <color key="titleColor" red="0.065819807349999995" green="0.37504118679999998" blue="0.49672544000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="factButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="yjr-xg-wQL"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xsv-5I-sTa">
                                                         <rect key="frame" x="232" y="0.0" width="38" height="105"/>
@@ -215,7 +227,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="105"/>
                                                                 <state key="normal" title="Button" image="up_full"/>
                                                                 <connections>
-                                                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="cBp-I2-Nx7"/>
+                                                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="cBp-I2-Nx7"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -263,7 +275,7 @@
                                 </constraints>
                                 <state key="normal" title="Control Button" image="next_round_success"/>
                                 <connections>
-                                    <action selector="arrowButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="9We-iZ-EKH"/>
+                                    <action selector="controlButtonPressed:" destination="Kpw-v1-jYa" eventType="touchUpInside" id="9We-iZ-EKH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,6 +315,7 @@
                         <outletCollection property="factRowViews" destination="Rdg-sb-Hmv" collectionClass="NSMutableArray" id="r3a-Rq-JUW"/>
                         <outletCollection property="factRowViews" destination="aa2-hs-CZ2" collectionClass="NSMutableArray" id="Bex-bK-FoA"/>
                         <segue destination="WzR-9a-fyq" kind="show" identifier="gameplayToScore" id="DTs-UT-UlS"/>
+                        <segue destination="qd6-Jb-2kv" kind="modal" identifier="gameplayToWebView" modalPresentationStyle="pageSheet" modalTransitionStyle="flipHorizontal" id="uzo-6o-GgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2z-OZ-Dcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,6 +402,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cwd-Zm-e5t"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qC0-Wx-Bsj"/>
+                    <connections>
+                        <outlet property="webView" destination="5gK-Bs-j1V" id="eKe-zM-sPi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGZ-cP-nCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

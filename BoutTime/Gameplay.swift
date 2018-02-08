@@ -147,7 +147,7 @@ class Gameplay {
         }
     }
     
-    func arrowButtonPressed(_ sender: UIButton) {
+    func controlButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case ButtonTags.firstRowFullDown.rawValue: moveFact(for: .firstAndSecond)
         case ButtonTags.secondRowHalfUp.rawValue: moveFact(for: .firstAndSecond)

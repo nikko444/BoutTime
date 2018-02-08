@@ -75,14 +75,19 @@ class GameplayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func arrowButtonPressed(_ sender: UIButton) {
+    @IBAction func controlButtonPressed(_ sender: UIButton) {
         guard let unwrappedGameplay = gameplay else {
             fatalError("Critical Error! Gameplay class was not initialized in the body of a GameplayViewController.")
         }
-        unwrappedGameplay.arrowButtonPressed(sender)
+        unwrappedGameplay.controlButtonPressed(sender)
+    }
+    
+    @IBAction func factButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "gameplayToWebView", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameplayToScore" {
         guard let correctAnswers = gameplay?.correctAnswers,
             let numberOfRounds = gameplay?.numberOfRounds
             else {
@@ -90,6 +95,11 @@ class GameplayViewController: UIViewController {
         }
         let scoreViewController = segue.destination as! ScoreViewController
         scoreViewController.scoreString = String(format: "%01d/%01d", correctAnswers, numberOfRounds + 1)
+        }
+        //else if segue.identifier == "gameplayToWebView" {
+            //
+        //}
+        
     }
     
     func showScore () {

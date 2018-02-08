@@ -385,19 +385,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-Bs-j1V">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="522"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="The-kf-Rah">
+                                <rect key="frame" x="0.0" y="20" width="320" height="26"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-ZB-nd4">
+                                        <rect key="frame" x="283" y="0.0" width="32" height="26"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.98815220589999997" green="0.98829025029999995" blue="0.98810869459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissAction:" destination="qd6-Jb-2kv" eventType="touchUpInside" id="faX-a0-VSd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.57992035150527954" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xlL-ZB-nd4" secondAttribute="bottom" id="EAb-rt-hmS"/>
+                                    <constraint firstItem="xlL-ZB-nd4" firstAttribute="top" secondItem="The-kf-Rah" secondAttribute="top" id="TBn-qA-ADB"/>
+                                    <constraint firstAttribute="trailing" secondItem="xlL-ZB-nd4" secondAttribute="trailing" constant="5" id="qTg-jO-vVb"/>
+                                    <constraint firstItem="xlL-ZB-nd4" firstAttribute="width" secondItem="The-kf-Rah" secondAttribute="width" multiplier="0.1" id="slY-Ph-I6a"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="The-kf-Rah" firstAttribute="height" secondItem="5gK-Bs-j1V" secondAttribute="height" multiplier="0.05" id="DS9-eo-2ch"/>
+                            <constraint firstItem="The-kf-Rah" firstAttribute="trailing" secondItem="Cwd-Zm-e5t" secondAttribute="trailing" id="GI9-au-qeG"/>
+                            <constraint firstItem="The-kf-Rah" firstAttribute="leading" secondItem="Cwd-Zm-e5t" secondAttribute="leading" id="HqI-3q-fXK"/>
                             <constraint firstItem="Cwd-Zm-e5t" firstAttribute="bottom" secondItem="5gK-Bs-j1V" secondAttribute="bottom" id="VOs-f7-DYv"/>
                             <constraint firstItem="Cwd-Zm-e5t" firstAttribute="trailing" secondItem="5gK-Bs-j1V" secondAttribute="trailing" id="YBQ-dq-3CC"/>
-                            <constraint firstItem="5gK-Bs-j1V" firstAttribute="top" secondItem="Cwd-Zm-e5t" secondAttribute="top" id="gPb-HV-lC1"/>
+                            <constraint firstItem="The-kf-Rah" firstAttribute="top" secondItem="Cwd-Zm-e5t" secondAttribute="top" id="dGf-SQ-a8j"/>
+                            <constraint firstItem="5gK-Bs-j1V" firstAttribute="top" secondItem="The-kf-Rah" secondAttribute="bottom" id="gPb-HV-lC1"/>
                             <constraint firstItem="5gK-Bs-j1V" firstAttribute="leading" secondItem="Cwd-Zm-e5t" secondAttribute="leading" id="ll8-vh-l11"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cwd-Zm-e5t"/>
@@ -409,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGZ-cP-nCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="856"/>
+            <point key="canvasLocation" x="901.875" y="855.63380281690138"/>
         </scene>
     </scenes>
     <resources>
@@ -421,7 +446,6 @@
         <image name="up_half" width="158" height="229"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DTs-UT-UlS"/>
         <segue reference="BkQ-Lw-ce0"/>
     </inferredMetricsTieBreakers>
 </document>

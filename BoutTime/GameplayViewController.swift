@@ -30,6 +30,7 @@ class GameplayViewController: UIViewController {
     var gameplayLabelsHandler: GameplayLabelsHandler?
     var countdownTimer: CountdownTimer?
     var gameplay: Gameplay?
+    var senderFactButton: UIButton?
     
     override func becomeFirstResponder() -> Bool { //MARK: Overriden to implement shake gesture listener
         return true
@@ -83,22 +84,28 @@ class GameplayViewController: UIViewController {
     }
     
     @IBAction func factButtonPressed(_ sender: UIButton) {
+        self.senderFactButton = sender
         self.performSegue(withIdentifier: "gameplayToWebView", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameplayToScore" {
-        guard let correctAnswers = gameplay?.correctAnswers,
+            
+            guard let correctAnswers = gameplay?.correctAnswers,
             let numberOfRounds = gameplay?.numberOfRounds
             else {
                 fatalError("Critical Error! Most likely the gameplay variable failed to initialize in the body of a GameplayViewController.")
+            }
+            let scoreViewController = segue.destination as! ScoreViewController
+            scoreViewController.scoreString = String(format: "%01d/%01d", correctAnswers, numberOfRounds + 1)
+        } else if segue.identifier == "gameplayToWebView" {
+            
+            guard let title = self.senderFactButton?.currentTitle else {
+                fatalError("Critical Error! NO FACT BUTTON CAPTION BEEN SET!")
+            }
+            let webViewController = segue.destination as! WebViewController
+            webViewController.factCaption = title
         }
-        let scoreViewController = segue.destination as! ScoreViewController
-        scoreViewController.scoreString = String(format: "%01d/%01d", correctAnswers, numberOfRounds + 1)
-        }
-        //else if segue.identifier == "gameplayToWebView" {
-            //
-        //}
         
     }
     

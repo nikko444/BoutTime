@@ -13,14 +13,14 @@ class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
-    let url = URL(string: "https://google.com")
+    var factCaption = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let unwrappedUrl = url else {
-            fatalError("URL has not been passed into the WebViewController")
-        }
-        let request = URLRequest(url: unwrappedUrl)
+        //guard let unwrappedUrl = factToURL(parse: factCaption) else {
+        //    fatalError("URL has not been passed into the WebViewController")
+        //}
+        let request = URLRequest(url: factToURL(parse: factCaption))
         
         webView.load(request)
 
@@ -34,6 +34,14 @@ class WebViewController: UIViewController {
     
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func factToURL (parse fact: String) -> URL {
+        let replaced = fact.replacingOccurrences(of: "[!@#$%&*(){} \\[\\]\"^<>.,:;']", with: "+", options: .regularExpression, range: nil).lowercased()
+        let step1 = "https://en.wikipedia.org/w/index.php?search=" + replaced
+        let step2 = step1 + "&title=Special:Search&go=Go"
+        let url = URL(string: step2)
+        return url!
     }
     
     /*
